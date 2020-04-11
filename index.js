@@ -39,20 +39,18 @@ app.get('/api/courses/:id', (req, res) => {
 
 // Multiple route parameters 
 app.get('/api/posts/:year/:month/:day', (req, res) => {
-    res.send(req.params); // http://localhost:3000/api/posts/2020/5/15
+    res.send(req.params); // http://localhost:3000/api/posts/2020/5/15 (for example)
    
     // Query parameter on route ========= 
-    // res.send(req.query); // http://localhost:3000/api/posts/2020/5/15?sortBy=name
+    // res.send(req.query); // http://localhost:3000/api/posts/2020/5/15?sortBy=name (for example)
 });
 
 // Handling POST Requests ====================
 app.post('/api/courses', (req, res) => {
-
-    // Input Validation under Joi nmp package ==============
+    // Input Validation under Joi npm package ==============
     // const shcema = {
     //     name: Joi.string().min(3).max(30).required()
     // };
-
     // const result = Joi.validate(req.body, shcema);
     // console.log(result);
     // if (result.error) {
@@ -117,7 +115,6 @@ function validateCourse(course) {
     };
     return Joi.validate(course, shcema);
 }
-
 
 // PORT environment variable
 const port = process.env.PORT || 3000;
